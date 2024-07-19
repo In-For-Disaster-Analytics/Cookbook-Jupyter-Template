@@ -76,7 +76,6 @@ function create_jupyter_configuration {
 }
 
 function run_jupyter() {
-	conda activate ${COOKBOOK_CONDA_ENV}
 	NB_SERVERDIR=$HOME/.jupyter
 	JUPYTER_SERVER_APP="ServerApp"
 	JUPYTER_BIN="jupyter-lab"
@@ -102,7 +101,11 @@ function run_jupyter() {
 		echo "TACC: job ${SLURM_JOB_ID} execution finished at: $(date)"
 		exit 1
 	fi
+}
 
+function run_jupyter_normal(){
+	JUPYTER_BIN="jupyter-lab"
+	${JUPYTER_BIN}
 }
 
 function port_fowarding() {
@@ -148,6 +151,9 @@ function session_cleanup() {
 	done
 }
 
+if [ -z "${_tapisTenant}" ]; then
+run_jupyter_normal
+else
 load_cuda
 load_tap_functions
 get_tap_certificate
@@ -158,3 +164,4 @@ run_jupyter
 port_fowarding
 send_url_to_webhook
 session_cleanup
+fi
