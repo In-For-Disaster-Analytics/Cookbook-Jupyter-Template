@@ -159,7 +159,6 @@ load_tap_functions
 get_tap_certificate
 get_tap_token
 create_jupyter_configuration
-handle_installation
 run_jupyter
 port_fowarding
 send_url_to_webhook
