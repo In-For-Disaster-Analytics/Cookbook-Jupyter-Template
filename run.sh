@@ -268,6 +268,7 @@ function handle_installation() {
 			create_conda_environment
 		fi
 	fi
+	conda install jupyter-events  jupyterlab-server --force-reinstall --yes
 }
 
 
