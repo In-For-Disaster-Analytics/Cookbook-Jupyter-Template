@@ -272,7 +272,7 @@ function handle_installation() {
 
 function pre_start(){
 	conda activate ${COOKBOOK_CONDA_ENV}
-	conda install jupyterlab jupyterlab_server jupyter_server traitlets nbformat --force-reinstall --yes
+	conda install jupyterlab jupyterlab_server jupyter_server traitlets nbformat jsonschema --force-reinstall --yes
 }
 
 #Execution
