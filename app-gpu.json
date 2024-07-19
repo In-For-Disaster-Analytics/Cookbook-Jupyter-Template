@@ -7,7 +7,7 @@
   "runtime": "SINGULARITY",
   "runtimeVersion": null,
   "runtimeOptions": ["SINGULARITY_RUN"],
-  "containerImage": "docker://ghcr.io/in-for-disaster-analytics/cookbook-jupyter-template-gpu:0.0.1",
+  "containerImage": "docker://ghcr.io/in-for-disaster-analytics/cookbook-jupyter-template-gpu:sha-a1ba2f1",
   "jobType": "BATCH",
   "maxJobs": -1,
   "maxJobsPerUser": -1,
